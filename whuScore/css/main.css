@@ -95,3 +95,67 @@ h1 .site-name{
 	height: 400px;
 	background-color: #fff;
 }
+.course-info ul{
+	width: 100%;
+	height: 100%;
+	list-style: none;
+}
+.course-info ul li{
+	display: inline-block;
+	float: left;
+	width: 300px;
+	height: 100%;
+	text-align: center;
+	margin-right: 200px;
+}
+.course-info ul li span{
+	display: block;
+}
+.stu_info .name{
+	margin-top: 20px;
+	font-size: 48px;
+	color: #de4b18;
+	width: 100%;
+}
+.stu_info .num{
+	margin-top: 30px;
+	font-size: 14px;
+	color: #888;
+}
+.stu_info span.icon{
+	font-size: 38px;
+	margin-top: 40px;
+	color: #04A5E6;
+	width: 100%;
+}
+.xf-all .title{
+	display: block;
+	margin-top: 40px;
+	width: 300px;
+	color: #888;
+}
+.xf-all .num{
+	display: block;
+	font-size: 88px;
+	color: #de4b18;
+}
+.xf-all .about{
+	display: block;
+	margin-top: 30px;
+	color: #888;
+}
+#creditPie{
+	width: 400px;
+}
+#mean_score{
+	float:left;
+	margin-top: 30px;
+	width: 30%;
+	height: 400px;
+}
+#all_score{
+	float: left;
+	margin-top: 30px;
+	width: 70%;
+	height: 400px;
+}
