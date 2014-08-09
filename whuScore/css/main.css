@@ -1,0 +1,199 @@
+ul{
+	
+}
+body,html{
+	100%;
+	height:100%;
+}
+.header{
+	position: fixed;
+	z-index: 100;
+	width:100%;
+	height:70px;
+	background-color: #1d242e;
+}
+h1.logo{
+	float:left;
+	cursor: pointer;
+}
+.logo .logo-icon{
+	color: #04a5e6;
+	font-size: 36px;
+	float: left;
+	margin: 0 0 0 20px;
+}
+.logo .site-name:hover{
+	color: #fff;
+}
+h1 .site-name{
+	float:left;
+	font-size: 24px;
+	font-weight: normal;
+	color: #c3c3c3;
+	margin: 0px 0 0 20px;
+}
+.drop-list{
+	float:right;
+	font-size: 26px;
+	margin: 20px 20px 0 0;
+	color: #fff;
+	cursor: pointer;
+}
+.drop-list:hover{
+	color:#04A5E6;
+}
+
+.content{
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+.content .nav{
+	position: fixed;
+	float: left;
+	z-index: 98;
+	min-width: 260px;
+	height: 100%;
+	padding: 70px 0 0 0;
+	background-color: #1d242e; /* 212935 */
+}
+.nav ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	width: 100%;
+}
+.nav ul li{
+	display:block;
+	line-height: 48px;
+	padding-left: 60px;
+	width: 100%;
+	height: 48px;
+	color: #ccc;
+	cursor: pointer;
+}
+.nav ul li span{
+	margin-right: 10px;
+}
+.nav ul li:hover,.nav ul li.current{
+	background-color: #393939;
+	color: #db4c31;
+}
+.content .main-content{
+	position: absolute;
+	z-index: 96;
+	width: 100%;
+	height: 100%;
+	padding: 70px 0 0 260px;
+	background-color: #fff;
+}
+.course-info{
+	width: 100%;
+	height: 300px;
+	background-color: #ecf2f9;
+}
+.course-detail{
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+}
+.course-info ul{
+	width: 100%;
+	height: 100%;
+	list-style: none;
+}
+.course-info ul li{
+	display: inline-block;
+	float: left;
+	width: 300px;
+	height: 100%;
+	text-align: center;
+	margin-right: 200px;
+}
+.course-info ul li span{
+	display: block;
+}
+.stu_info .name{
+	margin-top: 20px;
+	font-size: 48px;
+	color: #de4b18;
+	width: 100%;
+}
+.stu_info .num{
+	margin-top: 30px;
+	font-size: 14px;
+	color: #888;
+}
+.stu_info span.icon{
+	font-size: 38px;
+	margin-top: 40px;
+	color: #04A5E6;
+	width: 100%;
+}
+.xf-all .title{
+	display: block;
+	margin-top: 40px;
+	width: 300px;
+	color: #888;
+}
+.xf-all .num{
+	display: block;
+	font-size: 88px;
+	color: #de4b18;
+}
+.xf-all .about{
+	display: block;
+	margin-top: 30px;
+	color: #888;
+}
+#creditPie{
+	width: 400px;
+}
+#mean_score{
+	float:left;
+	margin-top: 30px;
+	width: 30%;
+	height: 400px;
+}
+#all_score{
+	float: left;
+	margin-top: 30px;
+	width: 70%;
+	height: 400px;
+}
+
+
+/* login page */
+
+.login_page{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	background-color: #1d242e;
+}
+.login_page>form{
+	text-align: center;
+	width: 480px;
+	height: 240px;
+	margin: 180px auto 0 auto;
+	color: #fff;
+	background: rgba(122,122,122,0.5);
+	border-radius: 4px;
+}
+.login_page form>span.title{
+	padding: 8px;
+	display: block;
+	width: 100%;
+	font-size: 24px;
+	color: #fff;
+	border-bottom: 1px solid rgba(122,122,122,0.8);
+	margin-bottom: 20px;
+}
+.login_page form span.title>span{
+	padding-right: 16px;
+}
+.login_page form button{
+	margin-top: 30px;
+}
