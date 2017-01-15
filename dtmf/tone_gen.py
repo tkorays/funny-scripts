@@ -4,16 +4,23 @@ ToneGenerator
 
 Usage
 -----
-tg = ToneGenerator()
-tg.gen_from_cfg('cfg.txt', 'dtmf.wav')
+if __name__ == '__main__':
+    tg = ToneGenerator()
+    tg.gen_from_cfg('cfg.txt')
 
 or directly call function add_tone, add_silence, write_to_file.
 
 config file format:
 # size, freq1, freq2, ..., amp1, amp2, ..., ontime, offtime
+%filename1.wav
 2, 697, 1209, 0.4, 0.4, 40, 40
 2, 697, 1336, 0.4, 0.4, 40, 40
+%filename2.wav
+2, 941, 1633, 0.4, 0.4, 40, 40
+3, 697, 1209, 500, 0.4, 0.4, 0.2, 40, 40
 
+# follows comment.
+% follows filename.
 The first column represent the size of frequents and amplitude.
 The last two columns mean on-time and off-time in DTMF.
 
@@ -56,7 +63,8 @@ class ToneGenerator:
             f.writeframes(b)
         f.close()
 
-    def gen_from_cfg(self, cfg_file, out_file):
+    def gen_from_cfg(self, cfg_file):
+        out_file_name = ''
         f = open(cfg_file, 'r')
         if not f:
             print("cfg file({}) not exist!".format(cfg_file))
@@ -64,6 +72,13 @@ class ToneGenerator:
         for line in open(cfg_file):
             line = f.readline().replace('\n', '').replace('\r', '')
             if line[0] == '#':
+                continue
+            if line[0] == '%':
+                if out_file_name:
+                    self.add_silence(40)
+                    self.write_to_file(out_file_name)
+                out_file_name = line[1:].replace('\n','').replace('\r', '').replace(' ', '')
+                self.data = numpy.array([])
                 continue
             cfg = line.split(',')
             fsize = int(cfg[0])
@@ -79,8 +94,9 @@ class ToneGenerator:
             offtime_ms = int(cfg[1+2*fsize+1])
             self.add_tone(fsize, freqs, amps, ontime_ms, offtime_ms)
         f.close()
-        self.add_silence(40)
-        self.write_to_file(out_file)
+        if out_file_name:
+            self.add_silence(40)
+            self.write_to_file(out_file_name)
 
 
     @staticmethod
@@ -102,3 +118,6 @@ class ToneGenerator:
         return numpy.concatenate([silence, numpy.divide(tone, 2.0)])
 
 
+if __name__ == '__main__':
+    tg = ToneGenerator()
+    tg.gen_from_cfg('cfg.txt')
